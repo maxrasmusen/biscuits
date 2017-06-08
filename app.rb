@@ -11,4 +11,5 @@ get '/' do
 end
 
 use BiscuitsController
+use MessagesController
 

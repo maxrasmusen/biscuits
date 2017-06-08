@@ -1,0 +1,5 @@
+<h1>messages Index</h1>
+<a href="/messages/new"> Add new message </a>
+<% @messages.each do |message| %>
+	<a href="/messages/<%= message.id %>"> <h2> <%= message.user %> </h2> </a>
+<% end %>

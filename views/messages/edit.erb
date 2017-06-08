@@ -1,0 +1,9 @@
+<form action="/messages/<%= @message.id %>" method="post">
+<input type="hidden" name="_method" value="PUT">
+	<label for="name">User:</label>
+	<input type="text" name="user" value="<%= @message.user %>">
+	<div></div>
+	<label for="text">Text:</label>
+	<textarea name="text"> <%= @message.text %> </textarea>
+	<input type="submit" value="Submit">
+</form>

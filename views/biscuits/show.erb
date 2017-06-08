@@ -1,0 +1,4 @@
+<h1><%= @biscuit.name %></h1>
+<p> <%=@biscuit.num_ratings > 0 ? @biscuit.rating_total / @biscuit.num_ratings : 0%></p>
+<p> <%= @biscuit.text %></p>
+<a href="/biscuits/<%= @biscuit.id %>/edit"> Edit </a>

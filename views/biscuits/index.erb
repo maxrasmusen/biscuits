@@ -1,5 +1,5 @@
 <h1>Biscuits Index</h1>
 
 <% @biscuits.each do |biscuit| %>
-	<h2> <%= biscuit.name %> </h2>
+	<a href="/biscuits/<%= biscuit.id %>"> <h2> <%= biscuit.name %> </h2> </a>
 <% end %>

@@ -17,14 +17,21 @@ class BiscuitsController < Sinatra::Base
 		erb :"biscuits/index"
 	end
 
+	# NEW
+	 get "/biscuits/new" do 
+	 	erb :"biscuits/new"
+	 end
+
 	# SHOW
 	 get "/biscuits/:id" do
-	 	"SHOW"
+	 	@biscuit = Biscuit.find(params[:id].to_i)
+	 	erb :"biscuits/show"
 	 end
 
 	 # CREATE 
 	 post "/biscuits" do 
-	 	"CREATE"
+	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 1, :rating_total => 1)
+	 	redirect '/biscuits'
 	 end
 
 	 # UPDATE
@@ -35,11 +42,6 @@ class BiscuitsController < Sinatra::Base
 	 # DELETE
 	 delete "/biscuits/:id" do 
 	 	"DELETE"
-	 end
-
-	 # NEW
-	 get "/biscuits/new" do 
-	 	"NEW"
 	 end
 
 	 # EDIT

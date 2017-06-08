@@ -36,7 +36,8 @@ class BiscuitsController < Sinatra::Base
 
 	 # UPDATE
 	 put "/biscuits/:id" do 
-	 	"UPDATE"
+	 	Biscuit.update(params[:id].to_i, :name => params[:name], :text => params[:text])
+	 	redirect "/biscuits"
 	 end
 
 	 # DELETE
@@ -46,6 +47,7 @@ class BiscuitsController < Sinatra::Base
 
 	 # EDIT
 	 get "/biscuits/:id/edit" do 
-	 	"EDIT"
+	 	@biscuit = Biscuit.find(params[:id].to_i)
+	 	erb :"biscuits/edit"
 	 end
 end

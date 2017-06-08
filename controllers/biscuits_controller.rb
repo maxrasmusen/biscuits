@@ -13,6 +13,7 @@ class BiscuitsController < Sinatra::Base
   	# INDEX
 
 	get "/biscuits" do
+		@biscuits = Biscuit.all
 		erb :"biscuits/index"
 	end
 

@@ -5,7 +5,28 @@
 	</div>
 	<p class="left"> <%= @biscuit.text %></p>
 	<img id="main-image" src="<%= @biscuit.image_url %>" width=200px height=200px>
+
+	<form action="/biscuits/<%= @biscuit.id %>/rate" method="post" enctype="multipart/form-data">
+		 <label>
+	        <input type="radio" name="rating" value="1" > 1 
+	      </label>
+	      <label>
+	        <input type="radio" name="rating" value="2" > 2 
+	      </label>
+	      <label>
+	        <input type="radio" name="rating" value="3" > 3
+	      </label>
+	      <label>
+	      	<input type="radio" name="rating" value="4" > 4
+	      </label>
+	      <label>
+	      	<input type="radio" name="rating" value="5" > 5
+	      </label>
+		<input type="submit" value="Submit">
+	</form>
+
 	<p> <a href="/biscuits/<%= @biscuit.id %>/edit"> Edit </a> </p>
+
 </div>
 
 <div id="messages">

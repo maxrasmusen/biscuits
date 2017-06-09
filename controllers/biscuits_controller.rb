@@ -52,6 +52,12 @@ class BiscuitsController < Sinatra::Base
 	 	b = Biscuit.find(params[:id].to_i)
 	 	Biscuit.update(params[:id].to_i, :name => params[:name], :text => params[:text])
 	 	Biscuit.update(params[:id].to_i, :image_url => image_url) if image_url != nil
+	 	redirect "/biscuits/#{params[:id]}"
+	 end
+
+	 # RATE
+	 post "/biscuits/:id/rate" do 
+	 	b = Biscuit.find(params[:id].to_i)
 	 	Biscuit.update(params[:id], :rating_total => b.rating_total+ params[:rating].to_i, :num_ratings => b.num_ratings + 1) if params.key?("rating")
 	 	redirect "/biscuits/#{params[:id]}"
 	 end

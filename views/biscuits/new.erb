@@ -1,8 +1,11 @@
-<form action="/biscuits" method="post">
+<form action="/biscuits" method="post" enctype="multipart/form-data">
 	<label for="name">Name:</label>
 	<input type="text" name="name">
 	<div></div>
 	<label for="text">Text:</label>
 	<textarea name="text"></textarea>
+	<div></div>
+	<label for="img"> Image: </label>
+	<input type="file" name="img">
 	<input type="submit" value="Submit">
 </form>

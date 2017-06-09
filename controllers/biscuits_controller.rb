@@ -30,7 +30,8 @@ class BiscuitsController < Sinatra::Base
 
 	 # CREATE 
 	 post "/biscuits" do 
-	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 1, :rating_total => 0, :image_url => "imagepath")	
+	 	image_url = Biscuit.upload_image params
+	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 1, :rating_total => 0, :image_url => image_url)	
 	 	redirect '/biscuits'
 	 end
 

@@ -4,6 +4,7 @@ class Biscuit < ActiveRecord::Base
 	has_many :messages
 
 	def self.upload_image params
+		return nil if !params.key?("img")
 		file = params[:img][:tempfile]		
 		client_id = 'bb856e82bdce476'
 		client_secret = 'ea7a14f342fe4cbc8bdbeeb22fe7ff764711f1a2'
@@ -12,5 +13,6 @@ class Biscuit < ActiveRecord::Base
 		imgur_session = Imgurapi::Session.new(client_id: client_id, client_secret: client_secret, refresh_token: refresh_token, access_token: access_token)
 		image = imgur_session.image.image_upload(file)
 		return image.link
+		return " sdfa "
 	end
 end

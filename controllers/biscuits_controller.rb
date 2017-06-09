@@ -37,7 +37,9 @@ class BiscuitsController < Sinatra::Base
 
 	 # UPDATE
 	 put "/biscuits/:id" do 
+	 	image_url = Biscuit.upload_image params
 	 	Biscuit.update(params[:id].to_i, :name => params[:name], :text => params[:text])
+	 	Biscuit.update(params[:id].to_i, :image_url => image_url) if image_url != nil
 	 	redirect "/biscuits"
 	 end
 

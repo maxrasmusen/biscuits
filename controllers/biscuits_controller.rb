@@ -10,19 +10,28 @@ class BiscuitsController < Sinatra::Base
     	register Sinatra::Reloader
   	end
 
-  	# INDEX
 
+  	# INDEX
 	get "/biscuits" do
-		@biscuit_list = Biscuit.order(num_ratings: :desc).limit(5)
+		@biscuit_list = Biscuit.biscuit_list
 		@biscuits = Biscuit.all
 		@messages = Message.all
 
 		erb :"biscuits/index"
 	end
 
+	# SEARCH
+	 get "/biscuits/search" do
+	 	search = Biscuit.ransack(name_cont: params[:q])
+	 	@biscuits = search.result.to_a
+		@biscuit_list = Biscuit.biscuit_list	 	
+	 	# puts @biscuits
+	 	erb :"biscuits/search-results"
+	 end
+
 	# NEW
 	 get "/biscuits/new" do 
-		@biscuit_list = Biscuit.order(num_ratings: :desc)
+		@biscuit_list = Biscuit.biscuit_list
 
 	 	erb :"biscuits/new"
 	 end
@@ -30,14 +39,14 @@ class BiscuitsController < Sinatra::Base
 	# SHOW
 	 get "/biscuits/:id" do
 	 	@biscuit = Biscuit.find(params[:id].to_i)
-		@biscuit_list = Biscuit.order(num_ratings: :desc)
+		@biscuit_list = Biscuit.biscuit_list
 
 	 	erb :"biscuits/show"
 	 end
 
 	 # CREATE 
 	 post "/biscuits" do 
-		@biscuit_list = Biscuit.order(num_ratings: :desc)
+		@biscuit_list = Biscuit.biscuit_list
 
 	 	image_url = Biscuit.upload_image params
 	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 0, :rating_total => 0, :image_url => image_url)	
@@ -46,7 +55,7 @@ class BiscuitsController < Sinatra::Base
 
 	 # UPDATE
 	 put "/biscuits/:id" do 
-		@biscuit_list = Biscuit.order(num_ratings: :desc)
+		@biscuit_list = Biscuit.biscuit_list
 
 	 	image_url = Biscuit.upload_image params
 	 	b = Biscuit.find(params[:id].to_i)
@@ -64,7 +73,7 @@ class BiscuitsController < Sinatra::Base
 
 	 # DELETE
 	 delete "/biscuits/:id" do 
-		@biscuit_list = Biscuit.order(num_ratings: :desc)
+		@biscuit_list = Biscuit.biscuit_list
 
 	 	Biscuit.destroy(params[:id].to_i)
 	 	redirect "/biscuits"
@@ -72,7 +81,7 @@ class BiscuitsController < Sinatra::Base
 
 	 # EDIT
 	 get "/biscuits/:id/edit" do 
-		@biscuit_list = Biscuit.order(num_ratings: :desc)
+		@biscuit_list = Biscuit.biscuit_list
 
 	 	@biscuit = Biscuit.find(params[:id].to_i)
 	 	erb :"biscuits/edit"

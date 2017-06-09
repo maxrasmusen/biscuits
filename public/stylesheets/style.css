@@ -70,6 +70,7 @@
 #message-input {
 	vertical-align: bottom;
 	padding: 10px;
+	align-content: center;
 }
 
 #nav {

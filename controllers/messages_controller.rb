@@ -31,8 +31,8 @@ class MessagesController < Sinatra::Base
 	 # CREATE 
 	 post "/messages" do 
 	 	puts 'creating message'
-	 	Message.create(:user => params[:user], :text => params[:text])	
-	 	redirect '/messages'
+	 	Message.create(:user => params[:user], :text => params[:text], :biscuit_id => params[:biscuit_id].to_i)	
+	 	redirect "/biscuits/#{params[:biscuit_id]}"
 	 end
 
 	 # UPDATE

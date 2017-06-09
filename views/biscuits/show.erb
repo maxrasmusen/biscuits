@@ -4,3 +4,12 @@
 <img src="<%= @biscuit.image_url %>" width=200px height=200px>
 <%= erb :"partials/messages" %>
 <a href="/biscuits/<%= @biscuit.id %>/edit"> Edit </a>
+<form action="/messages" method="post">
+	<label for="name">User:</label>
+	<input type="text" name="user">
+	<div></div>
+	<label for="text">Text:</label>
+	<textarea name="text"></textarea>
+	<input type="hidden" value="<%= @biscuit.id %>" name="biscuit_id">
+	<input type="submit" value="Submit">
+</form>

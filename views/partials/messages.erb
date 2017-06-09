@@ -1,4 +1,17 @@
-<% @messages.each do |message|%>
-	<h4> <%= message.user %> </h4>
-	<p> <%= message.text %> </p>
+<div id="message-list">
+	<% @messages.each do |message|%>
+		<h4> <%= message.user %> </h4>
+		<p> <%= message.text %> </p>
+	<% end %>
+</div>
+
+<% if @biscuit %>
+	<div id="message-input">
+		<form action="/messages" method="post">
+			<input type="text" name="user">
+			<input type="text" name="text">
+			<input type="hidden" value="<%= @biscuit.id %>" name="biscuit_id">
+			<input type="submit" value="Submit" style="display: none;">
+		</form>
+	</div>
 <% end %>

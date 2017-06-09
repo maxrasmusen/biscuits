@@ -2,11 +2,16 @@
 <html>
 <head>
 	<title> Biscuits </title>
+	<link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+	<script
+	  src="https://code.jquery.com/jquery-3.2.1.min.js"
+	  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+	  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="/scripts/scroll.js"></script>
 </head>
 <body>
 
-	<a href='/biscuits/new'> New Biscuit </a>
-	<a href='/biscuits'> Home </a>
+	<%= erb :"partials/navigation"	%>
 
 	<!-- Insert Content Here -->
 	<%= yield %>

@@ -1,19 +1,15 @@
-<h1><%= @biscuit.name %></h1>
-<p> <%=@biscuit.num_ratings > 0 ? (@biscuit.rating_total.to_f / @biscuit.num_ratings.to_f).round(1) : 0%></p>
-<p> <%= @biscuit.text %></p>
-<img src="<%= @biscuit.image_url %>" width=200px height=200px>
-<% @messages = @biscuit.messages%>
-<%= erb :"partials/messages" %>
-<a href="/biscuits/<%= @biscuit.id %>/edit"> Edit </a>
-<form action="/messages" method="post">
-	<label for="name">User:</label>
-	<input type="text" name="user">
-	<div></div>
-	<label for="text">Text:</label>
-	<textarea name="text"></textarea>
-	<input type="hidden" value="<%= @biscuit.id %>" name="biscuit_id">
-	<input type="submit" value="Submit">
-</form>
+<div id="left">
+	<h1><%= @biscuit.name %></h1>
+	<p> <%=@biscuit.num_ratings > 0 ? (@biscuit.rating_total.to_f / @biscuit.num_ratings.to_f).round(1) : 0%></p>
+	<p> <%= @biscuit.text %></p>
+	<img src="<%= @biscuit.image_url %>" width=200px height=200px>
+	<p> <a href="/biscuits/<%= @biscuit.id %>/edit"> Edit </a> </p>
+</div>
+
+<div id="messages">
+	<% @messages = @biscuit.messages%>
+	<%= erb :"partials/messages" %>
+</div>
 
 <form action="/biscuits/<%= @biscuit.id %>" method="POST">
 <input type="hidden" name="_method" value="DELETE">

@@ -14,3 +14,8 @@
 	<input type="hidden" value="<%= @biscuit.id %>" name="biscuit_id">
 	<input type="submit" value="Submit">
 </form>
+
+<form action="/biscuits/<%= @biscuit.id %>" method="POST">
+<input type="hidden" name="_method" value="DELETE">
+	<input type="submit" value="DELETE BISCUIT">
+</form>

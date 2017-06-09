@@ -1,5 +1,3 @@
-# require "imgurapi"
-
 class Biscuit < ActiveRecord::Base
 	has_many :messages
 
@@ -15,4 +13,5 @@ class Biscuit < ActiveRecord::Base
 		return image.link
 		return " sdfa "
 	end
+
 end

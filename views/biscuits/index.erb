@@ -1,17 +1,26 @@
 <div class="left">
-	<h1>Biscuits Index</h1>
-	<% @biscuits.each do |biscuit| %>
-		  <div class="col-sm-6 col-md-4">
-		  	<a href="/biscuits/<%= biscuit.id %>">
-			    <div class="thumbnail">
-			      <img src="<%= biscuit.image_url %>" >
-			      <div class="caption">
-			         <h3><%= biscuit.name %></h3>
-			      </div>
-			    </div>
-			</a>
-		  </div>
-	<% end %>
+	<div id="top-row">
+		<h1 id="title">Biscuits Index</h1>
+	</div>
+	<div id="thumbnails-container">
+		<% @biscuits.each_with_index do |biscuit, i| %>
+			<% if i % 3 == 0 %>
+				<div class="row">
+				</div>
+			<% end %>
+			  <div class="col-sm-6 col-md-4">
+			  	<a href="/biscuits/<%= biscuit.id %>">
+				    <div class="thumbnail">
+				      <img src="<%= biscuit.image_url %>" >
+				      <div class="caption">
+				         <h3><%= biscuit.name %></h3>
+				      </div>
+				    </div>
+				</a>
+			  </div>
+		<% end %>
+		</div>
+	</div>
 </div>
 
 <div id="messages">

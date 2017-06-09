@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20170608152315) do
 
   create_table "biscuits", force: :cascade do |t|
     t.string "name"
-    t.text "text"
+    t.string "text"
     t.integer "num_ratings"
     t.integer "rating_total"
     t.string "image_url"

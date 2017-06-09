@@ -2,6 +2,7 @@
 <p> <%=@biscuit.num_ratings > 0 ? @biscuit.rating_total / @biscuit.num_ratings : 0%></p>
 <p> <%= @biscuit.text %></p>
 <img src="<%= @biscuit.image_url %>" width=200px height=200px>
+<% @messages = @biscuit.messages%>
 <%= erb :"partials/messages" %>
 <a href="/biscuits/<%= @biscuit.id %>/edit"> Edit </a>
 <form action="/messages" method="post">

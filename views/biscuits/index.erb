@@ -3,3 +3,5 @@
 <% @biscuits.each do |biscuit| %>
 	<a href="/biscuits/<%= biscuit.id %>"> <h2> <%= biscuit.name %> </h2> </a>
 <% end %>
+
+<%= erb :"partials/messages" %>

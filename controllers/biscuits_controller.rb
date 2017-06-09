@@ -14,6 +14,7 @@ class BiscuitsController < Sinatra::Base
 
 	get "/biscuits" do
 		@biscuits = Biscuit.all
+		@messages = Message.all
 		erb :"biscuits/index"
 	end
 

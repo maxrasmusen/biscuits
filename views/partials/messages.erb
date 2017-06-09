@@ -8,8 +8,8 @@
 <% if @biscuit %>
 	<div id="message-input">
 		<form action="/messages" method="post">
-			<input type="text" name="user">
-			<input type="text" name="text">
+			<input type="text" name="user" size="15">
+			<input type="text" name="text" size="40">
 			<input type="hidden" value="<%= @biscuit.id %>" name="biscuit_id">
 			<input type="submit" value="Submit" style="display: none;">
 		</form>

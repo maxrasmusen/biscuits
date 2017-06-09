@@ -13,19 +13,19 @@ class MessagesController < Sinatra::Base
   	# INDEX
 
 	get "/messages" do
-		@messages = Message.all
-		erb :"messages/index"
+		messages = Message.all
+		"#{messages}"
 	end
 
 	# NEW
 	 get "/messages/new" do 
-	 	erb :"messages/new"
+	 	"MESSAGES CREATION DONE ON BISCUIT PAGES"
 	 end
 
 	# SHOW
 	 get "/messages/:id" do
 	 	@message = Message.find(params[:id].to_i)
-	 	erb :"messages/show"
+	 	"#{@message.text}"
 	 end
 
 	 # CREATE 
@@ -37,18 +37,16 @@ class MessagesController < Sinatra::Base
 
 	 # UPDATE
 	 put "/messages/:id" do 
-	 	Message.update(params[:id].to_i, :name => params[:user], :text => params[:text])
-	 	redirect "/messages"
+	 	"CAN'T CHANGE MESSAGES"
 	 end
 
 	 # DELETE
 	 delete "/messages/:id" do 
-	 	"DELETE"
+	 	"CAN'T DELETE MESSAGES"
 	 end
 
 	 # EDIT
 	 get "/messages/:id/edit" do 
-	 	@message = Message.find(params[:id].to_i)
-	 	erb :"messages/edit"
+	 	"CAN'T CHANGE MESSAGES"
 	 end
 end

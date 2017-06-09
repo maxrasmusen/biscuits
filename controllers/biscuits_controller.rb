@@ -13,24 +13,32 @@ class BiscuitsController < Sinatra::Base
   	# INDEX
 
 	get "/biscuits" do
+		@biscuit_list = Biscuit.order(num_ratings: :desc)
 		@biscuits = Biscuit.all
 		@messages = Message.all
+
 		erb :"biscuits/index"
 	end
 
 	# NEW
 	 get "/biscuits/new" do 
+		@biscuit_list = Biscuit.order(num_ratings: :desc)
+
 	 	erb :"biscuits/new"
 	 end
 
 	# SHOW
 	 get "/biscuits/:id" do
 	 	@biscuit = Biscuit.find(params[:id].to_i)
+		@biscuit_list = Biscuit.order(num_ratings: :desc)
+
 	 	erb :"biscuits/show"
 	 end
 
 	 # CREATE 
 	 post "/biscuits" do 
+		@biscuit_list = Biscuit.order(num_ratings: :desc)
+
 	 	image_url = Biscuit.upload_image params
 	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 0, :rating_total => 0, :image_url => image_url)	
 	 	redirect '/biscuits'
@@ -38,6 +46,8 @@ class BiscuitsController < Sinatra::Base
 
 	 # UPDATE
 	 put "/biscuits/:id" do 
+		@biscuit_list = Biscuit.order(num_ratings: :desc)
+
 	 	image_url = Biscuit.upload_image params
 	 	b = Biscuit.find(params[:id].to_i)
 	 	Biscuit.update(params[:id].to_i, :name => params[:name], :text => params[:text])
@@ -48,12 +58,16 @@ class BiscuitsController < Sinatra::Base
 
 	 # DELETE
 	 delete "/biscuits/:id" do 
+		@biscuit_list = Biscuit.order(num_ratings: :desc)
+
 	 	Biscuit.destroy(params[:id].to_i)
 	 	redirect "/biscuits"
 	 end
 
 	 # EDIT
 	 get "/biscuits/:id/edit" do 
+		@biscuit_list = Biscuit.order(num_ratings: :desc)
+	 	
 	 	@biscuit = Biscuit.find(params[:id].to_i)
 	 	erb :"biscuits/edit"
 	 end

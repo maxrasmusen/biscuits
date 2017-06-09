@@ -31,14 +31,15 @@ class BiscuitsController < Sinatra::Base
 	 # CREATE 
 	 post "/biscuits" do 
 	 	image_url = Biscuit.upload_image params
-	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 1, :rating_total => 0, :image_url => image_url)	
+	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 0, :rating_total => 0, :image_url => image_url)	
 	 	redirect '/biscuits'
 	 end
 
 	 # UPDATE
 	 put "/biscuits/:id" do 
 	 	image_url = Biscuit.upload_image params
-	 	Biscuit.update(params[:id].to_i, :name => params[:name], :text => params[:text])
+	 	b = Biscuit.find(params[:id].to_i)
+	 	Biscuit.update(params[:id].to_i, :name => params[:name], :text => params[:text], :rating_total => b.rating_total+ params[:rating].to_i, :num_ratings => b.num_ratings + 1)
 	 	Biscuit.update(params[:id].to_i, :image_url => image_url) if image_url != nil
 	 	redirect "/biscuits"
 	 end

@@ -8,5 +8,23 @@
 	<div></div>
 	<label for="img"> Image: </label>
 	<input type="file" name="img" value="<%= @biscuit.image_url %>">
+
+	 <label>
+        <input type="radio" name="rating" value="1" > 1 
+      </label>
+      <label>
+        <input type="radio" name="rating" value="2" > 2 
+      </label>
+      <label>
+        <input type="radio" name="rating" value="3" > 3
+      </label>
+      <label>
+      	<input type="radio" name="rating" value="4" > 4
+      </label>
+      <label>
+      	<input type="radio" name="rating" value="5" > 5
+      </label>
+    </div>
+
 	<input type="submit" value="Submit">
 </form>

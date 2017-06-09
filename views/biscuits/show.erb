@@ -1,8 +1,10 @@
-<div id="left">
-	<h1><%= @biscuit.name %></h1>
-	<p> <%=@biscuit.num_ratings > 0 ? (@biscuit.rating_total.to_f / @biscuit.num_ratings.to_f).round(1) : 0%></p>
-	<p> <%= @biscuit.text %></p>
-	<img src="<%= @biscuit.image_url %>" width=200px height=200px>
+<div class="left">
+	<div id="top-row">
+		<h1 id="rating"> <%=@biscuit.num_ratings > 0 ? (@biscuit.rating_total.to_f / @biscuit.num_ratings.to_f).round(1) : 0%></h1>
+		<h1 id="title"><%= @biscuit.name %></h1>
+	</div>
+	<p class="left"> <%= @biscuit.text %></p>
+	<img id="main-image" src="<%= @biscuit.image_url %>" width=200px height=200px>
 	<p> <a href="/biscuits/<%= @biscuit.id %>/edit"> Edit </a> </p>
 </div>
 
@@ -11,7 +13,7 @@
 	<%= erb :"partials/messages" %>
 </div>
 
-<form action="/biscuits/<%= @biscuit.id %>" method="POST">
+<form id="delete-button" action="/biscuits/<%= @biscuit.id %>" method="POST">
 <input type="hidden" name="_method" value="DELETE">
 	<input type="submit" value="DELETE BISCUIT">
 </form>

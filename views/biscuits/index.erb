@@ -1,7 +1,16 @@
-<div id="left">
+<div class="left">
 	<h1>Biscuits Index</h1>
 	<% @biscuits.each do |biscuit| %>
-		<a href="/biscuits/<%= biscuit.id %>"> <h2> <%= biscuit.name %> </h2> </a>
+		  <div class="col-sm-6 col-md-4">
+		  	<a href="/biscuits/<%= biscuit.id %>">
+			    <div class="thumbnail">
+			      <img src="<%= biscuit.image_url %>" >
+			      <div class="caption">
+			         <h3><%= biscuit.name %></h3>
+			      </div>
+			    </div>
+			</a>
+		  </div>
 	<% end %>
 </div>
 

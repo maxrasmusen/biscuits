@@ -13,7 +13,7 @@ class BiscuitsController < Sinatra::Base
   	# INDEX
 
 	get "/biscuits" do
-		@biscuit_list = Biscuit.order(num_ratings: :desc)
+		@biscuit_list = Biscuit.order(num_ratings: :desc).limit(5)
 		@biscuits = Biscuit.all
 		@messages = Message.all
 
@@ -67,7 +67,7 @@ class BiscuitsController < Sinatra::Base
 	 # EDIT
 	 get "/biscuits/:id/edit" do 
 		@biscuit_list = Biscuit.order(num_ratings: :desc)
-	 	
+
 	 	@biscuit = Biscuit.find(params[:id].to_i)
 	 	erb :"biscuits/edit"
 	 end

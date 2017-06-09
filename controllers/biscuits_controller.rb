@@ -24,9 +24,10 @@ class BiscuitsController < Sinatra::Base
 	 get "/biscuits/search" do
 	 	search = Biscuit.ransack(name_cont: params[:q])
 	 	@biscuits = search.result.to_a
-		@biscuit_list = Biscuit.biscuit_list	 	
+		@biscuit_list = Biscuit.biscuit_list
+		@messages = Message.all
 	 	# puts @biscuits
-	 	erb :"biscuits/search-results"
+	 	erb :"biscuits/index"
 	 end
 
 	# NEW

@@ -1,5 +1,5 @@
 <h1><%= @biscuit.name %></h1>
-<p> <%=@biscuit.num_ratings > 0 ? @biscuit.rating_total / @biscuit.num_ratings : 0%></p>
+<p> <%=@biscuit.num_ratings > 0 ? (@biscuit.rating_total.to_f / @biscuit.num_ratings.to_f).round(1) : 0%></p>
 <p> <%= @biscuit.text %></p>
 <img src="<%= @biscuit.image_url %>" width=200px height=200px>
 <% @messages = @biscuit.messages%>

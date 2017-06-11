@@ -6,6 +6,7 @@ class CreateBiscuits < ActiveRecord::Migration[5.1]
   		t.integer :num_ratings
   		t.integer :rating_total
   		t.float :rating
+  		t.string :image_url
   	end
   end
 end

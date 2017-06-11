@@ -16,10 +16,11 @@ ActiveRecord::Schema.define(version: 20170608152315) do
   enable_extension "plpgsql"
 
   create_table "biscuits", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.string "text"
     t.integer "num_ratings"
     t.integer "rating_total"
+    t.float "rating"
     t.string "image_url"
   end
 

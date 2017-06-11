@@ -30,8 +30,12 @@ class Biscuit < ActiveRecord::Base
 	end
 
 	def self.rate_biscuit params
-		b = Biscuit.find(params[:id].to_i)
-	 	Biscuit.update(params[:id], :rating_total => b.rating_total+ params[:rating].to_i, :num_ratings => b.num_ratings + 1) if params.key?("rating")
+		if params.key?("rating")
+			b = Biscuit.find(params[:id].to_i)
+			new_total_rating = b.rating_total+ params[:rating].to_i
+			new_rating = new_total_rating.to_f / (b.num_ratings + 1).to_f
+	 		Biscuit.update(params[:id], :rating_total => new_total_rating, :num_ratings => b.num_ratings + 1, :rating => new_rating)
+		end
 	end
 
 	def self.create_biscuit params

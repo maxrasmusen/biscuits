@@ -1,6 +1,6 @@
 <div class="left">
 	<div id="top-row">
-		<h1 id="rating"> <%=@biscuit.num_ratings > 0 ? (@biscuit.rating_total.to_f / @biscuit.num_ratings.to_f).round(1) : 0%></h1>
+		<h1 id="rating"> <%= @biscuit.rating.round(1) %></h1>
 		<h1 id="title"><%= @biscuit.name %></h1>
 	</div>
 	<p class="left"> <%= @biscuit.text %></p>

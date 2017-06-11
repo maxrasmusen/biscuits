@@ -7,7 +7,7 @@
 			<a href="/biscuits/<%= message.biscuit_id%>" class="message-a">
 		<% end %>
 		<article class="message">
-			<h4> <%= message.user %> </h4>
+			<h4 class="message-title"> <%= message.user %><%= " : " + @biscuit_names["#{message.biscuit_id}"].to_s if @biscuit_names%> </h4>
 			<p> <%= message.text %> </p>	
 		</article>
 		<%if @index %>

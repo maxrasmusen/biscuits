@@ -18,4 +18,8 @@ class Biscuit < ActiveRecord::Base
 		@biscuit_list = Biscuit.order(num_ratings: :desc).limit(5)
 	end
 
+	def self.names_as_hash
+		Biscuit.select(:id, :name).as_json.map {|elem| {"#{elem["id"]}" => "#{elem["name"]}"}}.inject {|prev, nex| prev.merge nex}
+	end
+
 end

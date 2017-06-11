@@ -3,11 +3,16 @@
 
 <div id="message-list">
 	<% @messages.each do |message|%>
-		<article id="message">
+		<%if @isIndex %>
+			<a href="/biscuits/<%= message.biscuit_id%>" class="message-a">
+		<% end %>
+		<article class="message">
 			<h4> <%= message.user %> </h4>
 			<p> <%= message.text %> </p>	
 		</article>
-		
+		<%if @index %>
+			</a>
+		<% end %>
 	<% end %>
 </div>
 

@@ -10,11 +10,15 @@ class BiscuitsController < Sinatra::Base
     	register Sinatra::Reloader
   	end
 
+  	def nav_variables
+  		@popular_biscuit_list = Biscuit.popular_biscuit_list
+		@top_biscuit_list = Biscuit.top_biscuit_list
+  	end
 
   	# INDEX
 	get "/biscuits" do
-		@popular_biscuit_list = Biscuit.popular_biscuit_list
-		@top_biscuit_list = Biscuit.top_biscuit_list
+		nav_variables
+
 		@biscuits = Biscuit.all
 		@messages = Message.all
 		@biscuit_names = Biscuit.names_as_hash
@@ -24,36 +28,38 @@ class BiscuitsController < Sinatra::Base
 
 	# SEARCH
 	 get "/biscuits/search" do
+		nav_variables
+
 	 	@biscuits = Biscuit.search_for_biscuit params
-		@biscuit_list = Biscuit.biscuit_list
 		@messages = Message.all
 	 	erb :"biscuits/index"
 	 end
 
 	# NEW
 	 get "/biscuits/new" do 
-		@biscuit_list = Biscuit.biscuit_list
+		nav_variables
+
 	 	erb :"biscuits/new"
 	 end
 
 	# SHOW
 	 get "/biscuits/:id" do
+	 	nav_variables
+
 	 	@biscuit = Biscuit.find(params[:id].to_i)
-		@popular_biscuit_list = Biscuit.popular_biscuit_list
-		@top_biscuit_list = Biscuit.top_biscuit_list
 	 	erb :"biscuits/show"
 	 end
 
 	 # CREATE 
 	 post "/biscuits" do 
-		@biscuit_list = Biscuit.biscuit_list
 	 	Biscuit.create_biscuit params
 	 	redirect '/biscuits'
 	 end
 
 	 # UPDATE
 	 put "/biscuits/:id" do 
-		@biscuit_list = Biscuit.biscuit_list
+		nav_variables
+
 		Biscuit.update_biscuit params
 	 	redirect "/biscuits/#{params[:id]}"
 	 end
@@ -73,7 +79,8 @@ class BiscuitsController < Sinatra::Base
 
 	 # EDIT
 	 get "/biscuits/:id/edit" do 
-		@biscuit_list = Biscuit.biscuit_list
+		nav_variables
+		
 	 	@biscuit = Biscuit.find(params[:id].to_i)
 	 	erb :"biscuits/edit"
 	 end

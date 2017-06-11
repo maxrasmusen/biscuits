@@ -22,4 +22,26 @@ class Biscuit < ActiveRecord::Base
 		Biscuit.select(:id, :name).as_json.map {|elem| {"#{elem["id"]}" => "#{elem["name"]}"}}.inject {|prev, nex| prev.merge nex}
 	end
 
+	def self.update_biscuit params
+		image_url = Biscuit.upload_image params
+	 	b = Biscuit.find(params[:id].to_i)
+	 	Biscuit.update(params[:id].to_i, :name => params[:name], :text => params[:text])
+	 	Biscuit.update(params[:id].to_i, :image_url => image_url) if image_url != nil
+	end
+
+	def self.rate_biscuit params
+		b = Biscuit.find(params[:id].to_i)
+	 	Biscuit.update(params[:id], :rating_total => b.rating_total+ params[:rating].to_i, :num_ratings => b.num_ratings + 1) if params.key?("rating")
+	end
+
+	def self.create_biscuit params
+		image_url = Biscuit.upload_image params
+	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 0, :rating_total => 0, :image_url => image_url)
+	end
+
+	def self.search_for_biscuit params
+		search = Biscuit.ransack(name_cont: params[:q])
+	 	return search.result.to_a
+	end
+
 end

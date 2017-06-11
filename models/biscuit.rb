@@ -14,8 +14,12 @@ class Biscuit < ActiveRecord::Base
 		return " sdfa "
 	end
 
-	def self.biscuit_list 
+	def self.popular_biscuit_list 
 		@biscuit_list = Biscuit.order(num_ratings: :desc).limit(5)
+	end
+
+	def self.top_biscuit_list
+		Biscuit.order(rating: :desc).limit(5)
 	end
 
 	def self.names_as_hash

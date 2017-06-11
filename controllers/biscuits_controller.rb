@@ -13,7 +13,8 @@ class BiscuitsController < Sinatra::Base
 
   	# INDEX
 	get "/biscuits" do
-		@biscuit_list = Biscuit.biscuit_list
+		@popular_biscuit_list = Biscuit.popular_biscuit_list
+		@top_biscuit_list = Biscuit.top_biscuit_list
 		@biscuits = Biscuit.all
 		@messages = Message.all
 		@biscuit_names = Biscuit.names_as_hash
@@ -38,7 +39,8 @@ class BiscuitsController < Sinatra::Base
 	# SHOW
 	 get "/biscuits/:id" do
 	 	@biscuit = Biscuit.find(params[:id].to_i)
-		@biscuit_list = Biscuit.biscuit_list
+		@popular_biscuit_list = Biscuit.popular_biscuit_list
+		@top_biscuit_list = Biscuit.top_biscuit_list
 	 	erb :"biscuits/show"
 	 end
 

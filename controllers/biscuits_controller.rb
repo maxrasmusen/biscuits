@@ -71,7 +71,6 @@ class BiscuitsController < Sinatra::Base
 
 	 # DELETE
 	 delete "/biscuits/:id" do 
-		@biscuit_list = Biscuit.biscuit_list
 	 	Biscuit.destroy(params[:id].to_i)
 	 	redirect "/biscuits"
 	 end

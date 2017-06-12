@@ -32,7 +32,11 @@ class Biscuit < ActiveRecord::Base
 	end
 
 	def self.update_biscuit params
-		image_url = Biscuit.upload_image params
+		if params[:url_string] != ""
+			image_url = params[:url_string]
+		else	
+			image_url = Biscuit.upload_image params
+		end
 	 	b = Biscuit.find(params[:id].to_i)
 	 	Biscuit.update(params[:id].to_i, :name => params[:name], :text => params[:text])
 	 	Biscuit.update(params[:id].to_i, :image_url => image_url) if image_url != nil
@@ -48,7 +52,11 @@ class Biscuit < ActiveRecord::Base
 	end
 
 	def self.create_biscuit params
-		image_url = Biscuit.upload_image params
+		if params[:url_string] != ""
+			image_url = params[:url_string]
+		else	
+			image_url = Biscuit.upload_image params
+		end
 	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 0, :rating_total => 0, :image_url => image_url, :rating => 0)
 	end
 

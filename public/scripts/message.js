@@ -6,8 +6,11 @@ function init() {
 		params = {user: this.elements[0].value, text: this.elements[1].value, biscuit_id: this.elements[2].value};
 		addMessageToDOM(params);
 		$.post("/messages", params, function() {
-
+			
 		});
+		for (var i=0; i < this.elements.length-2; i++) {
+			this.elements[i].value = "";
+		}
 	}) 
 }
 

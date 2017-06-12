@@ -1,12 +1,14 @@
 <div class="left">
 	<div id="top-row">
+		<div id="above-rating"> </div>
+		<div id="left-rating"> </div>
 		<h1 id="rating"> <%= @biscuit.rating.round(1) %></h1>
 		<h1 id="title"><%= @biscuit.name %></h1>
 	</div>
-	<p class="left"> <%= @biscuit.text %></p>
+	<p id="biscuit-text"> <%= @biscuit.text %></p>
 	<img id="main-image" src="<%= @biscuit.image_url %>" width=200px height=200px>
 
-	<form action="/biscuits/<%= @biscuit.id %>/rate" method="post" enctype="multipart/form-data">
+	<form action="/biscuits/<%= @biscuit.id %>/rate" method="post" enctype="multipart/form-data" id="rate-form">
 		 <label>
 	        <input type="radio" name="rating" value="1" > 1 
 	      </label>
@@ -22,7 +24,7 @@
 	      <label>
 	      	<input type="radio" name="rating" value="5" > 5
 	      </label>
-		<input type="submit" value="Submit">
+		<input type="submit" value="Rate">
 	</form>
 
 	<p> <a href="/biscuits/<%= @biscuit.id %>/edit"> Edit </a> </p>

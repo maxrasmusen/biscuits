@@ -1,6 +1,6 @@
 /*
 
-BLUE: #4786ed;
+BLUE: #892596;
 
 */
 
@@ -9,11 +9,12 @@ BLUE: #4786ed;
 	vertical-align: top;
 	width: 55%;
 	margin: 10px;
-	border: solid #4786ed 1px;
+	border: solid #892596 1px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.075);
 	border-radius: 3px;
 	padding: 10px;
 	position: relative;
+	
 }
 
 #top-row #title {
@@ -50,7 +51,7 @@ BLUE: #4786ed;
 
 .navbar-default {
 	z-index: 3;
-	border-bottom: 1px solid #4786ed;
+	border-bottom: 1px solid #892596;
 }
 
 #index-title {

@@ -1,15 +1,15 @@
 #messages {
 	display: inline-block;
 	width: 40%;
-	border: solid #4786ed 1px;
+	border: solid #892596 1px;
 	box-shadow: 0 1px 2px rgba(0,0,0,.075);
 	border-radius: 3px;
 	margin-top: 10px;
 }
 
 .message {
-	border: solid #4786ed 1px;
-	box-shadow: 0 1px 2px rgba(0,0,0,.175);
+	border: solid #892596 1px;
+	box-shadow: 7px 4px 2px rgba(0,0,0,.175);
 	margin: 10px;
 	padding: 5px;
 	color: black;
@@ -28,7 +28,7 @@
 }
 
 #message-list {
-	background-color: lightgrey;
+	background: linear-gradient(#a289a5, #947299);
 	height: 70vh;
 	overflow-y: scroll;
 	overflow-x: hidden;

@@ -1,4 +1,8 @@
-
+class Array
+	def to_hash
+		
+	end
+end
 class Biscuit < ActiveRecord::Base
 	has_many :messages
 

@@ -1,12 +1,14 @@
-<form action="/biscuits/<%= @biscuit.id %>" method="post" enctype="multipart/form-data">
-<input type="hidden" name="_method" value="PUT">
-	<label for="name">Name:</label>
-	<input type="text" name="name" value="<%= @biscuit.name %>">
-	<div></div>
-	<label for="text">Text:</label>
-	<textarea name="text"> <%= @biscuit.text %> </textarea>
-	<div></div>
-	<label for="img"> Image: </label>
-	<input type="file" name="img" value="<%= @biscuit.image_url %>">
-	<input type="submit" value="Submit">
-</form>
+<div id="new-form">
+	<form action="/biscuits/<%= @biscuit.id %>" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="_method" value="PUT">
+		<label for="name">Name:</label>
+		<input type="text" name="name" value="<%= @biscuit.name %>">
+		<div></div>
+		<label for="text">Text:</label>
+		<textarea name="text"> <%= @biscuit.text %> </textarea>
+		<div></div>
+		<label for="img"> Image: </label>
+		<input type="file" name="img" value="<%= @biscuit.image_url %>">
+		<input type="submit" value="Submit">
+	</form>
+</div>

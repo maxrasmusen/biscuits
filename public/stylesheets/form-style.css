@@ -1,0 +1,21 @@
+#new-form {
+	width: 300px;
+	padding: 10;
+	align-content: center;
+	margin: auto;
+}
+
+#new-form input {
+	margin: 20px 0px 0px 0px;
+}
+
+#new-form label {
+	vertical-align: top;
+	margin: 20px 0px 0px 0px;
+}
+
+#new-form textarea {
+	margin-top: 20px;
+	width: 250px;
+	height: 250px;
+}

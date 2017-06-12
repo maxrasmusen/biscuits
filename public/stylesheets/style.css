@@ -49,6 +49,10 @@ BLUE: #892596;
 	flex-wrap: wrap;*/
 }
 
+.thumbnail {
+	break-inside: avoid-column;
+}
+
 .navbar-default {
 	z-index: 3;
 	border-bottom: 1px solid #892596;

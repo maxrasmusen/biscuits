@@ -8,5 +8,6 @@ gem "activerecord"
 gem "pg"
 gem 'tux', '~> 0.3.0'
 gem "pry"
-gem "imgurapi"
 gem "ransack"
+
+gem "imgurapi", "3.0.0", :path => "../biscuits/"

@@ -1,3 +1,8 @@
+PATH
+  remote: .
+  specs:
+    imgurapi (3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -34,18 +39,13 @@ GEM
     daemons (1.2.4)
     erubi (1.6.0)
     eventmachine (1.2.3)
-    faraday (0.12.1)
-      multipart-post (>= 1.2, < 3)
     i18n (0.8.4)
-    imgurapi (3.0.0)
-      faraday
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     method_source (0.8.2)
     mini_portile2 (2.2.0)
     minitest (5.10.2)
     multi_json (1.12.1)
-    multipart-post (2.0.0)
     mustermann (1.0.0)
     nokogiri (1.8.0)
       mini_portile2 (~> 2.2.0)
@@ -116,7 +116,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
-  imgurapi
+  imgurapi (= 3.0.0)!
   pg
   pry
   rake

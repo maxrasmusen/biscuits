@@ -1,3 +1,4 @@
+
 class Biscuit < ActiveRecord::Base
 	has_many :messages
 
@@ -44,7 +45,7 @@ class Biscuit < ActiveRecord::Base
 
 	def self.create_biscuit params
 		image_url = Biscuit.upload_image params
-	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 0, :rating_total => 0, :image_url => image_url)
+	 	Biscuit.create(:name => params[:name], :text => params[:text], :num_ratings => 0, :rating_total => 0, :image_url => image_url, :rating => 0)
 	end
 
 	def self.search_for_biscuit params

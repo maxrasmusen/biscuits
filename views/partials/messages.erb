@@ -10,7 +10,7 @@
 			<h4 class="message-title"> <%= message.user %><%= " : " + @biscuit_names["#{message.biscuit_id}"].to_s if @biscuit_names%> </h4>
 			<p> <%= message.text %> </p>	
 		</article>
-		<%if @index %>
+		<%if @isIndex %>
 			</a>
 		<% end %>
 	<% end %>

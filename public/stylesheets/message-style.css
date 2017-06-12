@@ -7,10 +7,15 @@
 	margin-top: 10px;
 }
 
+/*#message-list a {
+	padding-left: 0px;
+	margin-left: 5px;
+}*/
 .message {
 	border: solid #892596 1px;
 	box-shadow: 7px 4px 2px rgba(0,0,0,.175);
 	margin: 10px;
+	margin-left:0px;
 	padding: 5px;
 	color: black;
 	margin-right: -1px;
@@ -32,6 +37,7 @@
 	height: 70vh;
 	overflow-y: scroll;
 	overflow-x: hidden;
+	padding-left: 10px;
 }
 
 #message-input {

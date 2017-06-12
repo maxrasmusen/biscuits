@@ -22,7 +22,6 @@ class BiscuitsController < Sinatra::Base
 		@biscuits = Biscuit.all
 		@messages = Message.all
 		@biscuit_names = Biscuit.names_as_hash
-
 		erb :"biscuits/index"
 	end
 

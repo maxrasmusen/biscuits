@@ -1,0 +1,23 @@
+@media screen and (max-width: 1000px) {
+	#thumbnails-container {
+		columns: 2;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#thumbnails-container {
+		columns: 1;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	#messages {
+		display: block;
+		width: 100%;
+	}
+
+	.left {
+		display: block;
+		width: 100%;
+	}
+}

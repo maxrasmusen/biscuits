@@ -49,15 +49,3 @@
 #nav {
 	display: block;
 }
-
-@media screen and (max-width: 1000px) {
-	#thumbnails-container {
-		columns: 2;
-	}
-}
-
-@media screen and (max-width: 600px) {
-	#thumbnails-container {
-		columns: 1;
-	}
-}

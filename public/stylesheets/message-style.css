@@ -30,7 +30,8 @@
 #message-list {
 	background-color: lightgrey;
 	height: 80vh;
-	overflow: scroll;
+	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 #message-input {

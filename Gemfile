@@ -9,5 +9,6 @@ gem "pg"
 gem 'tux', '~> 0.3.0'
 gem "pry"
 gem "ransack"
-
-gem "imgurapi", "3.0.0", :path => "../biscuits/"
+gem "rails"
+gem "railties"
+gem "imgurapi"

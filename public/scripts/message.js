@@ -26,13 +26,15 @@ function addMessageToDOM(params) {
 }
 
 function requestData(biscuit_id) {
-	$.get("/biscuits/"+biscuit_id+"/messages", function(data) {
-		messages = JSON.parse(data);
-		numCurrentMessages = $("#message-list").children().length
-		for (var i = numCurrentMessages; i < messages.length; i++) {
-			params = {user: messages[i].user, text: messages[i].text, biscuit_id: biscuit_id}
-			addMessageToDOM(params)
-		}
-	})
-	setTimeout(requestData, 2000, biscuit_id)
+	if (biscuit_id > 0) {
+		$.get("/biscuits/"+biscuit_id+"/messages", function(data) {
+			messages = JSON.parse(data);
+			numCurrentMessages = $("#message-list").children().length
+			for (var i = numCurrentMessages; i < messages.length; i++) {
+				params = {user: messages[i].user, text: messages[i].text, biscuit_id: biscuit_id}
+				addMessageToDOM(params)
+			}
+			setTimeout(requestData, 2000, biscuit_id)
+		})
+	}
 }

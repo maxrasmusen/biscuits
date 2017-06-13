@@ -26,7 +26,6 @@ function addMessageToDOM(params) {
 }
 
 function requestData(biscuit_id) {
-	console.log('gettting data')
 	$.get("/biscuits/"+biscuit_id+"/messages", function(data) {
 		messages = JSON.parse(data);
 		numCurrentMessages = $("#message-list").children().length

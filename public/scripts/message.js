@@ -2,7 +2,7 @@ $(init)
 
 function init() {
 	var biscuit_id = parseInt($("#hidden-biscuit-id").html())
-	console.log (biscuit_id)
+	// console.log (biscuit_id)
 	$("#message-input-form").submit(function(event) {
 		event.preventDefault()
 		params = {user: this.elements[0].value, text: this.elements[1].value, biscuit_id: this.elements[2].value};

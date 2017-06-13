@@ -19,6 +19,7 @@ class BiscuitsController < Sinatra::Base
 	get "/biscuits" do
 		nav_variables
 
+		@title = "All Biscuits"
 		@biscuits = Biscuit.all
 		@messages = Message.all
 		@biscuit_names = Biscuit.names_as_hash
@@ -29,6 +30,7 @@ class BiscuitsController < Sinatra::Base
 	 get "/biscuits/search" do
 		nav_variables
 
+		@title = "Search Results"
 	 	@biscuits = Biscuit.search_for_biscuit params
 		@messages = Message.all
 	 	erb :"biscuits/index"

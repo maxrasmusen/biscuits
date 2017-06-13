@@ -5,7 +5,7 @@ PURPLE: #892596;
 */
 
 #navbar-brand {
-	font-family: 'Frijole', cursive;
+	font-family: 'Permanent Marker', cursive;
 	font-size: 30px;
 	color: #892596;
 }
@@ -28,26 +28,6 @@ PURPLE: #892596;
 	display:inline-block;
 }
 
-#above-rating {
-	width: 100px;
-    height: 30px;
-    position: absolute;
-    z-index: 2;
-    background-color: white;
-    left: -11px;
-    top: -31px;
-}
-
-#left-rating {
-	width: 30px;
-    height: 100px;
-    position: absolute;
-    z-index: 2;
-    background-color: white;
-    left: -31px;
-    top: -31px;
-}
-
 #thumbnails-container {
 	columns: 3;
 	padding: 15px;
@@ -61,7 +41,7 @@ PURPLE: #892596;
 
 .navbar-default {
 	z-index: 3;
-	border-bottom: 1px solid #892596;
+	border-bottom: 1px solid #892596;	
 }
 
 #index-title {

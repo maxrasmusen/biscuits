@@ -37,14 +37,34 @@
     border-radius: 100%;
     left: -35px;
     top: -60px;
-    line-height: 118px;
+    line-height: 123px;
     text-align: end;
-    padding-right: 7px;
+    padding-right: 16px;
     margin-left: 10px;
 	display: inline-block;
-	font-family: 'Frijole', cursive;
+	font-family: 'Permanent Marker', cursive;
 }
 
 #edit-link {
 	margin-left: 10px;
+}
+
+#above-rating {
+	width: 100px;
+    height: 30px;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    left: -11px;
+    top: -31px;
+}
+
+#left-rating {
+	width: 30px;
+    height: 100px;
+    position: absolute;
+    z-index: 2;
+    background-color: white;
+    left: -31px;
+    top: -31px;
 }

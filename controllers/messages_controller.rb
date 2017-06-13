@@ -17,6 +17,12 @@ class MessagesController < Sinatra::Base
 		"#{messages}"
 	end
 
+	get "/biscuits/:id/messages" do
+		messages =  Message.where("biscuit_id = '#{params[:id]}'")
+		messages = messages.to_json
+		"#{messages}"
+	end
+
 	# NEW
 	 get "/messages/new" do 
 	 	"MESSAGES CREATION DONE ON BISCUIT PAGES"

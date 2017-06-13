@@ -17,6 +17,7 @@
 </div>
 
 <% if @biscuit %>
+	<p style="display: none" id="hidden-biscuit-id"> <%= @biscuit.id %> </p>
 	<div id="message-input">
 		<form action="/messages" method="post" id="message-input-form">
 			<input type="text" name="user" size="15">

@@ -1,6 +1,8 @@
 $(init)
 
 function init() {
+	var biscuit_id = parseInt($("#hidden-biscuit-id").html())
+	console.log (biscuit_id)
 	$("#message-input-form").submit(function(event) {
 		event.preventDefault()
 		params = {user: this.elements[0].value, text: this.elements[1].value, biscuit_id: this.elements[2].value};
@@ -12,6 +14,7 @@ function init() {
 			this.elements[i].value = "";
 		}
 	}) 
+	requestData(biscuit_id);
 }
 
 function addMessageToDOM(params) {
@@ -20,4 +23,17 @@ function addMessageToDOM(params) {
 		" <p> "+params["text"]+"</p> </article>"
 	) 
 	scrollToBottom()
+}
+
+function requestData(biscuit_id) {
+	console.log('gettting data')
+	$.get("/biscuits/"+biscuit_id+"/messages", function(data) {
+		messages = JSON.parse(data);
+		numCurrentMessages = $("#message-list").children().length
+		for (var i = numCurrentMessages; i < messages.length; i++) {
+			params = {user: messages[i].user, text: messages[i].text, biscuit_id: biscuit_id}
+			addMessageToDOM(params)
+		}
+	})
+	setTimeout(requestData, 2000, biscuit_id)
 }

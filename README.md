@@ -38,7 +38,14 @@ Users can navigate around the site. In the navbar, New biscuit allows users to c
 
 The message box displays all messages from all users on the index page, and displays all messages relating to a particular biscuit on that biscuit's page. Users can send new messages by typing in the box and pressing enter. There is no submit button. 
 
+Users can search using the search bar. Currently this only searches the name of the biscuit, and the search results page is the same as the index. A possible extension is to create an advanced search that could search over biscuit descriptions, ratings and messages. 
+
 ## Technologies
 The back-end is written in ruby, and uses [sinatra](https://rubygems.org/gems/sinatra). The database is managed using the	 [Activerecord ORM](https://rubygems.org/gems/activerecord/versions/5.0.0.1).  Additional gems used are [ransack](https://rubygems.org/gems/ransack) for search and [imgurapi](https://rubygems.org/gems/imgurapi) to provide a ruby interface to the imgur api. This allows uploading images to imgur, so that images are preserved between version changes when the app is deployed to heroku. The database used is [postgres](https://rubygems.org/gems/pg).
 
 The front-end uses html, css and JavaScript. The styling is partially done using [bootstrap](http://getbootstrap.com/).
+
+## Extending
+Any extensions to the database will need their own migration file. This can be done using ```rake db:create_migration NAME="name_here" ```. To edit the migration, you must then edit the newly created file. An overview of migration structure can be found [here](http://guides.rubyonrails.org/v3.2/migrations.html). 
+
+Any gems used must be added to the Gemfile, and you must then bundle before running. 

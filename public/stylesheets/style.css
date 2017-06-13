@@ -1,9 +1,15 @@
 /*
 
-BLUE: #892596;
+PURPLE: #892596;
 
 */
 
+#navbar-brand {
+	font-family: 'Frijole', cursive;
+	font-size: 30px;
+	color: #892596;
+}
+ 
 .left {
 	display: inline-block;
 	vertical-align: top;

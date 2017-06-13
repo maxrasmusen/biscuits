@@ -72,6 +72,7 @@ class BiscuitsController < Sinatra::Base
 	 # DELETE
 	 delete "/biscuits/:id" do 
 	 	Biscuit.destroy(params[:id].to_i)
+	 	Message.where(biscuit_id: params[:id].to_i).destroy_all
 	 	redirect "/biscuits"
 	 end
 

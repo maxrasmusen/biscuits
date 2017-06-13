@@ -23,6 +23,18 @@ PURPLE: #892596;
 	
 }
 
+.navbar-default .navbar-nav li a:hover {
+	background: linear-gradient(#a289a5, #947299);
+	color: white;
+	text-shadow: none;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+    background: linear-gradient(#a289a5, #947299);
+	color: white;
+	text-shadow: none;
+}
+
 #top-row #title {
 	margin-left: 100px;
 	display:inline-block;

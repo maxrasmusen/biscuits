@@ -23,7 +23,10 @@ PURPLE: #892596;
 	
 }
 
-
+.form-control:focus {
+	box-shadow: inset 0px 0px 7px 0px #892596;
+	border-color: #892596;
+}
 
 .navbar-default .navbar-nav li a:hover {
 	background: linear-gradient(#a289a5, #947299);

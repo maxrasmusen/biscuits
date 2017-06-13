@@ -1,4 +1,7 @@
 # Biscuits Discussion
+
+A web app for the discussion and rating of your favourite biscuits. 
+
 ## Installation 
 Clone the repo with ```git clone git@github.com:maxrasmusen/biscuits.git```
 

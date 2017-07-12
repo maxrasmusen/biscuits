@@ -8,6 +8,8 @@ Clone the repo with ```git clone git@github.com:maxrasmusen/biscuits.git```
 ### Run Locally
 To run locally:
 
+You must have a postgres sever running. It must contain a user and database, both with the same name as the user who wishes to run the app. A basic method of setting this up can be found [here](http://www.techrepublic.com/blog/diy-it-guy/diy-a-postgresql-database-server-setup-anyone-can-handle/)
+
 Ensure bundler is installed and up to date: ``` gem install bundler```
 
 Navigate to root directory. 

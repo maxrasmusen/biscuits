@@ -24,7 +24,7 @@ Finally run ``` rackup ```
 
 ### Deploy to heroku
 
-[Sign up to heroku and install heroku command line interface] (https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) 
+[Sign up to heroku and install heroku command line interface](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction) 
 
 Run the following commands: 
 

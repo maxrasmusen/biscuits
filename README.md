@@ -32,6 +32,8 @@ Run the following commands:
 
 ``` git push heroku master ```
 
+``` heroku rake db:create ```
+
 ```heroku rake db:migrate ```
 
 ```heroku rake db:seed ```
